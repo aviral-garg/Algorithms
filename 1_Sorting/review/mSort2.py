@@ -9,7 +9,7 @@ def mSort(arr):
 
         i = j = k = 0
         while i < len(L) and j < len(R):
-            if L[i] <= R[j]:  # TODO: c check < vs <= diff
+            if L[i] < R[j]:
                 arr[k] = L[i]
                 i += 1
             else:
