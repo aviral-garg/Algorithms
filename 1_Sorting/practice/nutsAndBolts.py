@@ -6,7 +6,7 @@ def swap(arr, i, j):
 
 
 def partition(arr, lo, hi, p):
-    i = lo
+    i = lo - 1
     for j in range(lo, hi):
         if arr[i] < p:
             i += 1
