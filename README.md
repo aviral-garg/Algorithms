@@ -26,12 +26,18 @@ SE knowledge bank and interview preparation tracker. And
       1. quickSort
          1. ![quickSort](/resources/images/quickSort.png "quickSort")
       2. mergeSort
+         1. ![mSort](/resources/images/mSort.png "mergeSort")
       3. heapSort
+         1. ![heapSort](/resources/images/heapSort.png "heapSort")
    2. practice
-      1. q1
-      2. q2
-      3. q3
-      4. ...
+      1. q1: nutsAndBolts
+         1. ![nutsAndBolts](resources/images/nutsAndBolts.png "nutsAndBolts")
+      2. q2: mergeKSortedArrays
+         1. ![mergeKSortedArrays](resources/images/mergeKSortedArrays.png "mergeKSortedArrays")
+      3. q3: topK
+         1. ![topK](resources/images/topK.png "topK")
+      4. q4: 3sum
+         1.
 2. Recursion
 3. Trees
 4. ...
