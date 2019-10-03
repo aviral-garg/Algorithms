@@ -4,21 +4,19 @@
 
 class Solution:
     def knightDialer(self, N: int) -> int:
-        dp = [[0 for _ in range(10)] for _ in range(N+1)]
-
-        for digit in range(10):
-            dp[1][digit] = 1
+        prev = [1]*10  # for N = 1
+        curr = [1]*10
 
         for i in range(2, N+1):
-            dp[i][0] = dp[i-1][4] + dp[i-1][6]
-            dp[i][1] = dp[i-1][6] + dp[i-1][8]
-            dp[i][2] = dp[i-1][7] + dp[i-1][9]
-            dp[i][3] = dp[i-1][4] + dp[i-1][8]
-            dp[i][4] = dp[i-1][3] + dp[i-1][9] + dp[i-1][0]
-            dp[i][5] = 0
-            dp[i][6] = dp[i-1][1] + dp[i-1][7] + dp[i-1][0]
-            dp[i][7] = dp[i-1][2] + dp[i-1][6]
-            dp[i][8] = dp[i-1][1] + dp[i-1][3]
-            dp[i][9] = dp[i-1][2] + dp[i-1][4]
-
-        return sum(dp[N]) % (10**9 + 7)
+            curr[0] = prev[4] + prev[6]
+            curr[1] = prev[6] + prev[8]
+            curr[2] = prev[7] + prev[9]
+            curr[3] = prev[4] + prev[8]
+            curr[4] = prev[3] + prev[9] + prev[0]
+            curr[5] = 0
+            curr[6] = prev[1] + prev[7] + prev[0]
+            curr[7] = prev[2] + prev[6]
+            curr[8] = prev[1] + prev[3]
+            curr[9] = prev[2] + prev[4]
+            prev = curr[:]
+        return sum(curr) % (10**9 + 7)
