@@ -3,9 +3,9 @@ class Solution:
         if grid[0][0] == 1:
             return 0
 
-        dp = [r[:] for r in grid]
-        m = len(grid)
-        n = len(grid[0])
+            dp = [r[:] for r in grid]
+            m = len(grid)
+            n = len(grid[0])
 
         dp[0][0] = 1
 
@@ -19,5 +19,31 @@ class Solution:
             for c in range(1, n):
                 dp[r][c] = 0 if grid[r][c] == 1 else dp[r-1][c] + dp[r][c-1]
 
-        # print(r, c, dp)
         return dp[-1][-1]
+
+        # alternative:
+        #
+        # if grid[0][0] == 1:
+        #     return 0
+
+        # dp = [[0 for _ in row] for row in grid]
+
+        # r = len(grid)
+        # c = len(grid[0])
+
+        # i = 0
+        # while i < c and grid[0][i] != 1:
+        #     dp[0][i] = 1
+        #     i += 1
+
+        # i = 0
+        # while i < r and grid[i][0] != 1:
+        #     dp[i][0] = 1
+        #     i += 1
+
+        # for i in range(1, r):
+        #     for j in range(1, c):
+        #         if grid[i][j] != 1:
+        #             dp[i][j] = dp[i-1][j] + dp[i][j-1]
+
+        # return dp[-1][-1]
