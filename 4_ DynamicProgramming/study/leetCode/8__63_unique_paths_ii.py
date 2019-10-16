@@ -1,25 +1,56 @@
+# Space Optimized DP solution T=O(m+n) S=O(n)
 class Solution:
     def uniquePathsWithObstacles(self, grid: List[List[int]]) -> int:
-        if grid[0][0] == 1:
-            return 0
+        if len(grid[0]) == 0:
+            return 1
 
-            dp = [r[:] for r in grid]
-            m = len(grid)
-            n = len(grid[0])
+        p_row = [0 for _ in grid[0]]
+        row = p_row[:]
 
-        dp[0][0] = 1
+        for c in range(len(grid[0])):
+            if grid[0][c] != 1:
+                p_row[c] = 1
+            else:
+                break
 
-        for r in range(1, m):
-            dp[r][0] = 0 if grid[r][0] == 1 else dp[r-1][0]
+        print(p_row)
+        for r in range(1, len(grid)):
+            for c in range(len(grid[0])):
+                if grid[r][c] == 0:
+                    if c == 0:
+                        row[c] = p_row[c]
+                    else:
+                        row[c] = row[c-1] + p_row[c]
+                else:
+                    row[c] = 0
+            p_row = row[:]
+            print(row)
 
-        for c in range(1, n):
-            dp[0][c] = 0 if grid[0][c] == 1 else dp[0][c-1]
+        return p_row[-1]
 
-        for r in range(1, m):
-            for c in range(1, n):
-                dp[r][c] = 0 if grid[r][c] == 1 else dp[r-1][c] + dp[r][c-1]
+# normal dp solution T=O(m+n) S=O(m+n)
+# class Solution:
+#     def uniquePathsWithObstacles(self, grid: List[List[int]]) -> int:
+#         if grid[0][0] == 1:
+#             return 0
 
-        return dp[-1][-1]
+#             dp = [r[:] for r in grid]
+#             m = len(grid)
+#             n = len(grid[0])
+
+#         dp[0][0] = 1
+
+#         for r in range(1, m):
+#             dp[r][0] = 0 if grid[r][0] == 1 else dp[r-1][0]
+
+#         for c in range(1, n):
+#             dp[0][c] = 0 if grid[0][c] == 1 else dp[0][c-1]
+
+#         for r in range(1, m):
+#             for c in range(1, n):
+#                 dp[r][c] = 0 if grid[r][c] == 1 else dp[r-1][c] + dp[r][c-1]
+
+#         return dp[-1][-1]
 
         # alternative:
         #
