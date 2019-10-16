@@ -1,6 +1,6 @@
 # Algorithms
 
-Software Engineering Knowledge Bank + coding interview preparation tracker.
+Software Engineering Knowledge Bank + coding interview preparation.
 
 ## Table of Contents
 
