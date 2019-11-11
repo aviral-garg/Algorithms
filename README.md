@@ -11,7 +11,29 @@ Software Engineering Knowledge Bank + coding interview preparation.
     - [study](#study)
     - [practice](#practice)
 
-## Plan (update as we go)
+## Scripts
+
+```JavaScript
+// CJS 2 scripts for leetCode
+function KeyPress(e) {
+      var evtobj = window.event? event : e
+
+      // ctrl + ` => run code
+      if (evtobj.keyCode == 192 && evtobj.ctrlKey) {
+        document.querySelector("#app > div > div.main__2_tD > div.content__3fR6 > div > div.editor-wrapper__1ru6 > div > div.container__2WTi > div.action__38Xc > button.runcode__1EDI.css-y98m8o-sm").click();
+      }
+
+      // ctrl + . => hid console
+      if (evtobj.keyCode == 110 && evtobj.ctrlKey) {
+        document.querySelector("#app > div > div.main__2_tD > div.content__3fR6 > div > div.editor-wrapper__1ru6 > div > div.result__1UhQ > div:nth-child(2) > div > div.icon-wrapper__2q8n.close-icon__3nBt").click();
+        // console.log(document.querySelector("#app > div > div.main__2_tD > div.content__3fR6 > div > div.editor-wrapper__1ru6 > div > div.container__2WTi > div.action__38Xc > button.runcode__1EDI.css-y98m8o-sm") !== undefined);
+      }
+}
+
+document.onkeydown = KeyPress;
+```
+
+<!-- ## Plan (update as we go)
 
 1. Sorting
    1. study
@@ -34,9 +56,9 @@ Software Engineering Knowledge Bank + coding interview preparation.
 3. Trees
 4. ...
 5. ...
-6. ...
+6. ... -->
 
-## Processes
+<!-- ## Processes
 
 ### study
 
@@ -44,12 +66,12 @@ Software Engineering Knowledge Bank + coding interview preparation.
 | ---: | ---------------- |
 |   10 | get + understand |
 |   10 | discuss-1        |
-|   10 | discuss-2        |
+|   10 | discuss-2        | --> |
 
-### practice
+<!-- ### practice
 
 | time | task    |
 | ---: | ------- |
 |   15 | try     |
 |  ... | discuss |
-|  ... | ...     |
+|  ... | ...     | --> |
