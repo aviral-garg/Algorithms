@@ -27,6 +27,29 @@ class Node:
             result.append(sum(tmp))
         return result.index(max(result))+1
 
+    @staticmethod
+    def max_lvl_sum_without_tmp_deque(root):
+        if root is None:
+            return []
+        level = 0
+        max_sum = float("-inf")
+        min_level = 0
+        q = deque([root])
+        while q:
+            level += 1
+            total = 0
+            for _ in range(len(q)):
+                node = q.popleft()
+                if node.left is not None:
+                    q.append(node.left)
+                if node.right is not None:
+                    q.append(node.right)
+                total += node.val
+            if total > max_sum:
+                max_sum = total
+                min_level = level
+        return min_level
+
 
 # Driver Code
 if __name__ == '__main__':
