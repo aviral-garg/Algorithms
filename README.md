@@ -17,16 +17,26 @@ Software Engineering Knowledge Bank + coding interview preparation.
 // CJS 2 scripts for leetCode
 function KeyPress(e) {
       var evtobj = window.event? event : e
-
+      console.log(evtobj.keyCode + 'key pressed')
+      
       // ctrl + ` => run code
       if (evtobj.keyCode == 192 && evtobj.ctrlKey) {
-        document.querySelector("#app > div > div.main__2_tD > div.content__3fR6 > div > div.editor-wrapper__1ru6 > div > div.container__2WTi > div.action__38Xc > button.runcode__1EDI.css-y98m8o-sm").click();
+        document.querySelector("#app > div > div.main__2_tD > div.content__3fR6 > div > div.editor-wrapper__1ru6 > div > div.container__2WTi > div.func__1DsC > button").click();
+      }
+      
+      // ctrl + shift + ` => search by problem #
+      if (evtobj.keyCode == 192 && evtobj.ctrlKey && evtobj.shiftKey) {
+        document.querySelector("#app > div > div.main__2_tD > div.content__3fR6 > div > div.side-tools-wrapper__1TS9 > div > div:nth-child(2) > div > div.question-fast-picker__3VcA > button").click();
+        setTimeout(function() {document.querySelector("body > div.question-picker-detail__Rehh.show__1vkQ > div.question-picker-detail-menu__1-eB.show__N-Ie > div.question-picker-toolbar-wrapper__d-2J > div > div.handlers__ilNW > span > span.wrapper__3yGD.sm__YB7w.searchinput__3xUp > input").focus();
+          }, 500);
+          
+        setTimeout(function() {document.querySelector("body > div.question-picker-detail__Rehh.show__1vkQ > div.question-picker-detail-menu__1-eB.show__N-Ie > div.question-picker-questions-wrapper__2JGX > div > div.scroll-inner-wrapper__2apK > div > div.scroll-content__1y8T > div > div:nth-child(1)").click();
+        }, 2000);
       }
 
-      // ctrl + . => hid console
-      if (evtobj.keyCode == 110 && evtobj.ctrlKey) {
-        document.querySelector("#app > div > div.main__2_tD > div.content__3fR6 > div > div.editor-wrapper__1ru6 > div > div.result__1UhQ > div:nth-child(2) > div > div.icon-wrapper__2q8n.close-icon__3nBt").click();
-        // console.log(document.querySelector("#app > div > div.main__2_tD > div.content__3fR6 > div > div.editor-wrapper__1ru6 > div > div.container__2WTi > div.action__38Xc > button.runcode__1EDI.css-y98m8o-sm") !== undefined);
+      // ctrl + enter => submit code
+      if (evtobj.keyCode == 13 && evtobj.ctrlKey) {
+        document.querySelector("#app > div > div.main__2_tD > div.content__3fR6 > div > div.editor-wrapper__1ru6 > div > div.container__2WTi > div.action__38Xc > button.submit__2ISl.css-gahzfj-sm > span").click();
       }
 }
 
