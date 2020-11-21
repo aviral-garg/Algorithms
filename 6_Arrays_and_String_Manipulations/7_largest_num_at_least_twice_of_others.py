@@ -75,7 +75,7 @@ class Solution:
         """
         
         
-        # Helper code to generte some explanation details above
+        # Helper code to generate some explanation details in the comments above
         nums = [10, 3, 3, 2, 1]
         m = max(nums)
         row_format = "| {:>35} | {:>23} | {:<20}"
